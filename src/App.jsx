@@ -1,3 +1,3 @@
 export default function App() {
-  return <div>tets</div>
+  return <div className="flex">tets</div>
 }
