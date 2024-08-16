@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useTransform, useScroll } from 'framer-motion'
 import { useState } from 'react'
 
 export default function App() {
@@ -25,6 +25,7 @@ export default function App() {
     ['#ff008c', '#7700ff', 'rgb(230, 255, 0)']
   )
 
+  const { scrollYProgress } = useScroll()
   return (
     <>
       <motion.div
@@ -110,6 +111,11 @@ export default function App() {
         viewport={{ once: true }}
         className="bg-red-500 size-12"
       />
+      <motion.div
+        className="fixed top-0 left-0 w-full h-12 origin-left bg-black"
+        style={{ scaleX: scrollYProgress }}
+      />
+      <div className="h-screen"></div>
     </>
   )
 }
