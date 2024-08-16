@@ -78,6 +78,16 @@ export default function App() {
         whileTap={{ scale: 0.9 }}
         className="bg-red-500 size-12"
       />
+      <motion.div
+        drag
+        dragConstraints={{
+          top: -50,
+          left: -50,
+          right: 50,
+          bottom: 50
+        }}
+        className="bg-red-500 size-12"
+      />
     </>
   )
 }
