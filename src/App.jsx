@@ -11,6 +11,13 @@ export default function App() {
 
   const [flexCol, setFlexCol] = useState(false)
 
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: '-100%' }
+  }
+
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
       <motion.div
@@ -62,6 +69,10 @@ export default function App() {
         }}
         className="size-12 bg-slate-500"
       />
+      <motion.nav animate={isOpen ? 'open' : 'closed'} variants={variants}>
+        <div className="bg-red-500 size-12" />
+      </motion.nav>
+      <button onClick={() => setIsOpen((isOpen) => !isOpen)}>button</button>
     </>
   )
 }
