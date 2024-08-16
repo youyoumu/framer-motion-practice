@@ -148,6 +148,25 @@ export default function App() {
         ></motion.div>
       )}
       <button onClick={() => setUp((up) => !up)}>switch up</button>
+      <motion.svg
+        width="600"
+        height="600"
+        viewBox="0 0 600 600"
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.circle
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          r={100}
+          cx={100}
+          cy={100}
+          stroke={'#ff00ff'}
+          fill={'none'}
+          strokeWidth={10}
+          transition={{ duration: 1, ease: 'easeInOut', delay: 1 }}
+        />
+      </motion.svg>
     </>
   )
 }
