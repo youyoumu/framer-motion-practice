@@ -73,6 +73,11 @@ export default function App() {
         <div className="bg-red-500 size-12" />
       </motion.nav>
       <button onClick={() => setIsOpen((isOpen) => !isOpen)}>button</button>
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="bg-red-500 size-12"
+      />
     </>
   )
 }
