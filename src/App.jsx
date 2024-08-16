@@ -15,7 +15,7 @@ export default function App() {
     <>
       <motion.div
         animate={{ x: 100 }}
-        className="bg-red-700 w-64"
+        className="w-64 bg-red-700"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.2 }}
         drag="x"
@@ -48,6 +48,12 @@ export default function App() {
         <motion.div>a</motion.div>
         <motion.div>b</motion.div>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0.9, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.1 }}
+        className="bg-black size-12"
+      />
     </>
   )
 }
