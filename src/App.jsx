@@ -18,6 +18,13 @@ export default function App() {
 
   const [isOpen, setIsOpen] = useState(false)
 
+  const x2 = useMotionValue(0)
+  const background = useTransform(
+    x2,
+    [-100, 0, 100],
+    ['#ff008c', '#7700ff', 'rgb(230, 255, 0)']
+  )
+
   return (
     <>
       <motion.div
@@ -88,6 +95,14 @@ export default function App() {
         }}
         className="bg-red-500 size-12"
       />
+      <motion.div style={{ background }} className="size-24">
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          style={{ x: x2 }}
+          className="bg-black size-6"
+        ></motion.div>
+      </motion.div>
     </>
   )
 }
