@@ -32,6 +32,8 @@ export default function App() {
   )
 
   const { scrollYProgress } = useScroll()
+
+  const [up, setUp] = useState(false)
   return (
     <>
       <motion.div
@@ -132,6 +134,20 @@ export default function App() {
         style={{ scaleX: scrollYProgress }}
       />
       <div className="h-screen"></div>
+      {up && (
+        <motion.div
+          className="bg-green-500 size-12"
+          layoutId="test"
+        ></motion.div>
+      )}
+      <div className="size-24"></div>
+      {!up && (
+        <motion.div
+          className="bg-green-500 size-12"
+          layoutId="test"
+        ></motion.div>
+      )}
+      <button onClick={() => setUp((up) => !up)}>switch up</button>
     </>
   )
 }
