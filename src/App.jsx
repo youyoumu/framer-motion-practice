@@ -1,4 +1,10 @@
-import { motion, useMotionValue, useTransform, useScroll } from 'framer-motion'
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useScroll,
+  AnimatePresence
+} from 'framer-motion'
 import { useState } from 'react'
 
 export default function App() {
@@ -80,6 +86,16 @@ export default function App() {
       <motion.nav animate={isOpen ? 'open' : 'closed'} variants={variants}>
         <div className="bg-red-500 size-12" />
       </motion.nav>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="bg-blue-500 size-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
+        )}
+      </AnimatePresence>
       <button onClick={() => setIsOpen((isOpen) => !isOpen)}>button</button>
       <motion.button
         whileHover={{ scale: 1.1 }}
