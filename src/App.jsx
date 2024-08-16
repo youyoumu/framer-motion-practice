@@ -103,6 +103,13 @@ export default function App() {
           className="bg-black size-6"
         ></motion.div>
       </motion.div>
+      <div className="h-screen"></div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="bg-red-500 size-12"
+      />
     </>
   )
 }
